@@ -1,0 +1,44 @@
+mutation{
+  createOwner(createOwnerInput:{
+    name: "harshita"
+  }){
+    id,
+    name
+  }
+}
+
+
+mutation{
+  createPet(createPetInput:{
+    name: "ron",
+    type:"Pet",
+    ownerId:1
+  }){
+    id,
+    name
+  }
+}
+
+query{
+  pets{
+    id,
+    name,
+    type
+    owner{
+      id,
+      name
+    }
+  }
+}
+
+query{
+  getPet(id: 6){
+    id,
+    name,
+    type
+    owner{
+      id,
+      name
+    }
+  }
+}
